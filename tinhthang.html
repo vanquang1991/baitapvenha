@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <h2>kiểm tra số ngày trong tháng</h2>
+        </tr>
+        <tr>
+            <td>
+                <input id="nhapthang" type="number" placeholder="nhập tháng vào">
+            </td>
+            <td>
+                <button onclick="kiemtrathang()">check </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="ketqua"></p>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // function kiemtrathang() { // cách 1
+        //     let thang = document.getElementById('nhapthang').value;
+        //     if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 9 || thang == 10 || thang == 12) {
+        //         document.getElementById('ketqua').innerText = 'có 31 ngày';
+        //     } else {
+        //         if (thang == 2) {
+        //             document.getElementById('ketqua').innerText = 'có 28 ngày';
+        //         } else {
+        //             if (thang == 4 || thang == 6 || thang == 8 || thang == 11) {
+        //                 document.getElementById('ketqua').innerText = 'có 30 ngày';
+        //             } else {
+        //                 document.getElementById('ketqua').innerText = 'tháng không hợp lệ';
+        //             }
+        //         }
+        //     }
+        // }
+
+            function kiemtrathang() { // cách 2:
+                let thang = +document.getElementById("nhapthang").value
+            switch (thang) {
+                case 1 :
+                case 2 :
+                case 3 :
+                    document.getElementById('ketqua').innerText="mùa xuân";
+                    break;
+                case 4 :
+                case 5 :
+                case 6 :
+                    document.getElementById('ketqua').innerText="mùa hạ";
+                    break;   
+                case 7 :
+                case 8 :
+                case 9 :
+                    document.getElementById('ketqua').innerText="mùa thu";
+                    break;
+                case 10 :
+                case 11 :
+                case 12 :
+                    document.getElementById('ketqua').innerText="mùa đông";
+                    break;    
+                    default :
+                    document.getElementById('ketqua').innerText="tết đến"; 
+
+                }
+                
+
+            }
+        
+
+    </script>
+</body>
+
+</html>
